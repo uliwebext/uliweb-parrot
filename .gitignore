@@ -38,3 +38,4 @@ nosetests.xml
 # Uliweb
 parrot/sites/settings.ini
 local_settings.ini
+database.db
