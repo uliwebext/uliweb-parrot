@@ -44,8 +44,11 @@ def oauth_callback(sns):
 		access_token = token['access_token']
 		LoginUser = get_model('loginuser')
 
-		obj = LoginUser(site=sns, name=obj.name, uid=obj.uid, avatar=obj.avatar)
-		obj.save()
+		obj = LoginUser.get((LoginUser.c.site==sns) & (LoginUser.c.uid == obj.uid))
+		if not obj:
+			obj = LoginUser(site=sns, name=obj.name, uid=obj.uid, avatar=obj.avatar)
+			obj.save()
+		
 		request.session.set('user_id', obj.id)
 		return redirect("/")
 
