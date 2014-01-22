@@ -1,0 +1,17 @@
+[Parrot]
+ServerList = {
+	'weibo': {
+		'info': ('新浪微博', 'parrot.sites.WeiboClient'),
+        'redirect_uri': '/account/oauth/weibo',
+        'client_id': '',
+        'client_secret': '',
+
+	},
+
+    'douban' : {
+        'info': ('豆瓣', 'parrot.sites.DoubanClient'),
+        'redirect_uri': 'http://ericshi.com/account/oauth/douban',
+        'client_id': '',
+        'client_secret': ''
+    }
+}

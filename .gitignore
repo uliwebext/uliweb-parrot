@@ -34,3 +34,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Uliweb
+parrot/sites/settings.ini
+local_settings.ini

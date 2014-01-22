@@ -1,0 +1,33 @@
+{{extend "theme/skeleton.html"}}
+
+{{block content}}
+<div class="container">
+	<div class="row">
+  		<div class="span12">
+  			<h1> Parrot Demo Project</h1>
+  		</div>
+
+  		{{if logined:}}
+  			当前用户：
+        <ul>
+          <li>用户名: {{=user.name}}</li>
+          <li>登录网站: {{=user.site}}</li>
+          <li>uid: {{=user.uid}}</li>
+          <li>头像: <img src="{{=user.avatar}}"></li>
+        <ul>
+
+        <a href="/logout">Logout</a>
+  		{{else:}}
+  			请使用下面的网络来登录系统：
+  			<ul>
+  			{{for key in servers:}}
+  				<li><a href="/login/by/{{=key}}">{{=servers[key]['info'][0]}}</a></li>
+  				{{pass}}
+  			</ul>
+  		{{pass}}
+
+  		
+	</div>
+</div>
+
+{{end}}

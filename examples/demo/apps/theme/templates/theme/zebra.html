@@ -1,0 +1,34 @@
+{{extend "theme/skeleton.html"}}
+
+{{block content}}
+
+{{block set_current_menu}}
+	{{utils.set_current_menu('photos')}}
+{{end}}
+<div class="pure-g-r" id="layout">
+	<div class="pure-u pure-hidden-tablet pure-hidden-desktop" id="headnav">
+		<div class='logo'>
+		</div>
+		<div class='pure-menu-horizontal pure-menu-open'>
+			{{utils.navmenu(head=True)}}
+		</div>
+	</div>
+	<div class="pure-u pure-hidden-phone" id="nav">
+		<div class='logo'></div>
+		<div class='pure-menu pure-menu-open'>
+			{{utils.navmenu()}}
+		</div>
+		<div class='cats2-logo {{block catslogo_class}}cats2-004{{end}}'></div>
+	</div>
+	<div class="pure-u" id="main">
+		{{block main_content}}
+		{{end}}
+	</div>
+	<div class="pure-u pure-hidden-tablet pure-hidden-desktop" id="footer">
+		<div>{{=_('We are together')}}</div>
+		<div>{{=_('Eric & Penny\'s Home with two cats.')}}</div>
+		<div>&copy; {{=_('copyright 2013-3013')}}</div>
+		<div class='cats2-logo {{block catslogo_class}}cats2-004{{end}}'></div>
+	</div>	
+</div>
+{{end}}
